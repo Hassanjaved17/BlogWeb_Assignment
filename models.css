@@ -1,0 +1,40 @@
+.overlay-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row on larger screens */
+  gap: 25px;
+}
+
+.overlay-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.overlay-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.overlay-card:hover img {
+  transform: scale(1.1);
+}
+
+.overlay-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(44, 62, 80, 0.8);
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .overlay-container {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+  }
+}
